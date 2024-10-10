@@ -12,7 +12,7 @@ const Register: React.FC = () => {
 
     const handleRegister = async () => {
         try {
-            await axios.post('https://localhost:7249/api/Usuarios/Register', {
+            await axios.post('https://localhost:7249/api/Usuarios/Nuevo', {
                 usuNombre: nombre,
                 usuApellido: apellido,
                 usuCorreo: correo,
@@ -22,6 +22,7 @@ const Register: React.FC = () => {
             alert('Usuario registrado con éxito.');
             navigate('/login'); // Redirigir al login después del registro
         } catch (error) {
+            console.error("Error al registrar el usuario:", error);
             alert('Error al registrar el usuario.');
         }
     };

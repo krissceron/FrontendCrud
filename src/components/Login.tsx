@@ -9,23 +9,21 @@ const Login: React.FC = () => {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post('https://localhost:7249/api/auth/Login', null, {
-                params: {
-                    nombreusuario: username,
-                    contrasenia: password,
-                },
+            const response = await axios.post('https://localhost:7249/api/Usuarios/Login', {
+                usuUsuario: username,
+                usuContrasenia: password,
             });
 
             if (response.data) {
-                console.log("Usuario autenticado:", response.data); // Verificar el valor de la respuesta
                 localStorage.setItem('auth', JSON.stringify(response.data)); // Guardar el usuario en localStorage
-                console.log("Redirigiendo a la lista de usuarios");
+                console.log("Usuario autenticado:", response.data);
                 navigate('/userlist'); // Redirigir a la lista de usuarios
+            }
+        } catch (error) {
+            console.error("Error en el login:", error);
+            alert('Credenciales incorrectas. Inténtalo de nuevo.');
         }
-    } catch (error) {
-        alert('Credenciales incorrectas. Inténtalo de nuevo.');
-    }
-};
+    };
 
     return (
         <div>
