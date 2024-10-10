@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { User } from '../models/User';
 
-const API_URL = 'https://localhost:7249/api/Usuario';
+const API_URL = 'https://localhost:7249/api/Usuarios';
 
 const UserService = {
     getAllUsers: async () => {
@@ -20,7 +20,7 @@ const UserService = {
     },
     deleteUser: async (id: number) => {
         await axios.delete(`${API_URL}/Eliminar/${id}`);
-    }
+    },
 };
 
 export default UserService;

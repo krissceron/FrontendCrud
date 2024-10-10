@@ -1,17 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import UserList from './components/UserList';
 import UserForm from './components/UserForm';
 import UserDetail from './components/UserDetail';
+import Login from './components/Login';
+import Register from './components/Register';
 
 const App: React.FC = () => {
+    // Verificar si el usuario está autenticado leyendo el localStorage
+    const isAuthenticated = !!localStorage.getItem('user');
+    console.log("Estado de autenticación:", isAuthenticated); // Verificar el estado de autenticación
+
+
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<UserList />} />
-                <Route path="/create" element={<UserForm />} />
-                <Route path="/edit/:id" element={<UserForm />} />
-                <Route path="/view/:id" element={<UserDetail />} />
+                <Route path="/" element={<Navigate to="/login" />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/userlist" element={isAuthenticated ? <UserList /> : <Navigate to="/login" />} />
+                <Route path="/create" element={isAuthenticated ? <UserForm /> : <Navigate to="/login" />} />
+                <Route path="/edit/:id" element={isAuthenticated ? <UserForm /> : <Navigate to="/login" />} />
+                <Route path="/view/:id" element={isAuthenticated ? <UserDetail /> : <Navigate to="/login" />} />
+                <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
         </Router>
     );

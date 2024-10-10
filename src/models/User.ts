@@ -4,4 +4,6 @@ export interface User {
     usuApellido: string;
     usuCedula: number;
     usuCorreo: string;
+    usuUsuario:string;
+    usuContrasenia:string;
 }

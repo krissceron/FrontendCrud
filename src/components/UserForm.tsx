@@ -9,7 +9,9 @@ const UserForm: React.FC = () => {
         usuNombre: '',
         usuApellido: '',
         usuCedula: 0,
-        usuCorreo: ''
+        usuCorreo: '',
+        usuUsuario: '',
+        usuContrasenia: '',
     });
     const navigate = useNavigate();
     const { id } = useParams<{ id?: string }>();
