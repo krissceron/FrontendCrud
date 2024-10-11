@@ -25,7 +25,7 @@ const UserDetail: React.FC = () => {
     return (
         <div>
             <h1>Detalles del Usuario</h1>
-            <p><strong>ID:</strong> {user.usuId}</p>
+            
             <p><strong>Nombre:</strong> {user.usuNombre}</p>
             <p><strong>Apellido:</strong> {user.usuApellido}</p>
             <p><strong>Cédula:</strong> {user.usuCedula}</p>

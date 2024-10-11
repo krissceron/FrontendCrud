@@ -8,6 +8,7 @@ const Register: React.FC = () => {
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
     const [correo, setCorreo] = useState('');
+    const [cedula, setCedula] = useState('');
     const navigate = useNavigate();
 
     const handleRegister = async () => {
@@ -16,6 +17,7 @@ const Register: React.FC = () => {
                 usuNombre: nombre,
                 usuApellido: apellido,
                 usuCorreo: correo,
+                usuCedula: cedula,
                 usuUsuario: username,
                 usuContrasenia: password,
             });
@@ -41,6 +43,12 @@ const Register: React.FC = () => {
                 placeholder="Apellido"
                 value={apellido}
                 onChange={(e) => setApellido(e.target.value)}
+            />
+            <input
+                type="text"
+                placeholder="Cédula"
+                value={cedula}
+                onChange={(e) => setCedula(e.target.value)}
             />
             <input
                 type="email"
