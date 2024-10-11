@@ -39,8 +39,10 @@ const UserForm: React.FC = () => {
         } else {
             await UserService.createUser(user);
         }
-        navigate('/');
+        navigate('/userlist');
     };
+
+    
 
     return (
         <form onSubmit={handleSubmit}>
@@ -50,6 +52,7 @@ const UserForm: React.FC = () => {
             <input type="number" name="usuCedula" value={user.usuCedula} onChange={handleChange} placeholder="Cédula" required />
             <input type="email" name="usuCorreo" value={user.usuCorreo} onChange={handleChange} placeholder="Correo" required />
             <button type="submit">Guardar</button>
+            <button onClick={() => window.history.back()}>Volver</button>
         </form>
     );
 };

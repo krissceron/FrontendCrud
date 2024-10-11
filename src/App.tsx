@@ -28,9 +28,30 @@ const App: React.FC = () => {
                         </ProtectedRoute>
                     }
                 />
-                <Route path="/create" element={isAuthenticated ? <UserForm /> : <Navigate to="/login" />} />
-                <Route path="/edit/:id" element={isAuthenticated ? <UserForm /> : <Navigate to="/login" />} />
-                <Route path="/view/:id" element={isAuthenticated ? <UserDetail /> : <Navigate to="/login" />} />
+                <Route
+                    path="/create"
+                    element={
+                        <ProtectedRoute>
+                            <UserForm />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/edit/:id"
+                    element={
+                        <ProtectedRoute>
+                            <UserForm />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/view/:id"
+                    element={
+                        <ProtectedRoute>
+                            <UserDetail />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route path="*" element={<Navigate to="/login" />} />            
                 </Routes>
         </Router>
