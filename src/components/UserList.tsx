@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserService from '../services/UserService';
 import { User } from '../models/User';
-import { useNavigate } from 'react-router-dom';
+import LogoutButton from './LogoutButton';
 
 const UserList: React.FC = () => {
     const [users, setUsers] = useState<User[]>([]);
@@ -36,6 +37,8 @@ const UserList: React.FC = () => {
     return (
         <div>
             <h1>Lista de Usuarios</h1>
+            {/* Agregar el botón de cerrar sesión */}
+            <LogoutButton />
             <button onClick={handleCreate}>Crear</button>
             <ul>
                 {users.map(user => (
