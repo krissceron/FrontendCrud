@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# Frontend CRUD de Usuarios - React y TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto contiene el frontend de una aplicación de login y CRUD (Crear, Leer, Actualizar, Eliminar) de usuarios. Está desarrollado utilizando el framework **React** con **TypeScript**, proporcionando una interfaz de usuario eficiente y moderna.
 
-Currently, two official plugins are available:
+## Índice
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Descripción](#descripción)
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Requisitos previos](#requisitos-previos)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
 
-## Expanding the ESLint configuration
+## Descripción
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este proyecto implementa un sistema de login de usuarios junto con un CRUD completo para gestionar los datos de los usuarios. El objetivo principal es permitir a los usuarios iniciar sesión y a los administradores gestionar las cuentas de otros usuarios de manera eficiente.
 
-- Configure the top-level `parserOptions` property like this:
+## Características
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Login de usuarios**: Inicio de sesión seguro para acceder a la plataforma.
+- **CRUD de usuarios**:
+  - Crear nuevos usuarios.
+  - Leer y listar los usuarios existentes.
+  - Actualizar la información de los usuarios.
+  - Eliminar usuarios de la base de datos.
+- **Validación de formularios**: Los formularios cuentan con validaciones de datos en el cliente.
+- **Interfaz responsiva**: Adaptada para dispositivos móviles y de escritorio.
+  
+## Tecnologías
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Este proyecto fue construido utilizando las siguientes tecnologías:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **TypeScript**: Superconjunto de JavaScript que añade tipado estático.
+- **React Router**: Para la navegación entre las diferentes rutas.
+- **Axios**: Para la comunicación con APIs externas.
+- **CSS**: Para el estilo de los componentes.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Requisitos previos
+
+Antes de instalar y ejecutar el proyecto, asegúrate de tener lo siguiente instalado:
+
+- **Node.js** (versión 14 o superior)
+- **npm** (versión 6 o superior) o **yarn**
+
+## Instalación
+
+Sigue los siguientes pasos para clonar y configurar el proyecto en tu máquina local.
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/krissceron/FrontendCrud.git
