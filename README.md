@@ -12,7 +12,6 @@ Este proyecto contiene el frontend de una aplicación de login y CRUD (Crear, Le
 - [Uso](#uso)
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Contribución](#contribución)
-- [Licencia](#licencia)
 
 ## Descripción
 
@@ -54,3 +53,51 @@ Sigue los siguientes pasos para clonar y configurar el proyecto en tu máquina l
 
    ```bash
    git clone https://github.com/krissceron/FrontendCrud.git
+   
+2. Navega al directorio del proyecto:
+   
+   ```bash
+   cd FrontendCrud
+
+3. Instala las dependencias:
+   
+   ```bash
+   npm install
+
+  o si prefieres usar yarn:
+  
+       cd FrontendCrud
+
+## Uso
+Para ejecutar el proyecto en modo de desarrollo, usa el siguiente comando:
+
+     npm start
+
+o con yarn:
+
+     yarn start
+     
+Esto creará una carpeta build con los archivos listos para ser desplegados en un servidor.
+## Estructura del proyecto
+La estructura del proyecto sigue el siguiente formato:
+
+    ├── public/               # Archivos públicos y assets
+    ├── src/                  # Código fuente
+    │   ├── components/       # Componentes reutilizables
+    │   ├── pages/            # Páginas principales
+    │   ├── services/         # Servicios para la comunicación con la API
+    │   ├── App.tsx           # Punto de entrada de la aplicación
+    │   └── index.tsx         # Archivo principal de React
+    ├── package.json          # Dependencias y scripts del proyecto
+    └── tsconfig.json         # Configuración de TypeScript
+
+## Contribución
+Las contribuciones son bienvenidas. Si encuentras un problema o tienes alguna mejora que sugerir, por favor crea un issue o un pull request en el repositorio.
+
+Pasos para contribuir:
+
+1. Haz un fork del proyecto.
+2. Crea una rama nueva (git checkout -b feature/nueva-funcionalidad).
+3. Realiza los cambios y haz commit (git commit -m 'Añadir nueva funcionalidad').
+4. Sube los cambios (git push origin feature/nueva-funcionalidad).
+5. Abre un Pull Request.
